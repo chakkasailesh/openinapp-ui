@@ -11,6 +11,25 @@
   }
 }
 
+@layer components {
+  .large {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .small {
+      display: none;
+    }
+    .large {
+      display: block;
+    }
+    .clip {
+      -webkit-clip-path: polygon(0 0, 100% 0%, 79% 100%, 0% 100%);
+      clip-path: polygon(0 0, 100% 0%, 79% 100%, 0% 100%);
+    }
+  }
+}
+
 ::-webkit-scrollbar {
   display: none;
 }

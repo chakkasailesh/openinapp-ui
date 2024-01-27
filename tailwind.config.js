@@ -10,6 +10,8 @@ module.exports = {
       texticon: '#030229',
       textwarn: '#D33030',
       texttable: '#231F20',
+      bgbody: '#FAFAFB',
+      bginput: '#EAEAEA',
       bgtable: '#F5F5F5',
       bgrow: '#FFFFFF',
       dropdown: '#999CA0',
