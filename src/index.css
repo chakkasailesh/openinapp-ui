@@ -15,6 +15,9 @@
   .large {
     display: none;
   }
+  .logo {
+    display: flex;
+  }
 
   @media (min-width: 1024px) {
     .small {
@@ -26,6 +29,9 @@
     .clip {
       -webkit-clip-path: polygon(0 0, 100% 0%, 79% 100%, 0% 100%);
       clip-path: polygon(0 0, 100% 0%, 79% 100%, 0% 100%);
+    }
+    .logo {
+      display: none;
     }
   }
 }
