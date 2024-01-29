@@ -407,8 +407,8 @@ const Upload = ({ loggedIn }) => {
                   <p className="font-figtree lg:text-base text-dropdown">
                     {file.name}
                   </p>
-                  <p
-                    className="text-textwarn font-figtree text-[14px] cursor-pointer"
+                  <button
+                    className="text-textwarn font-figtree text-[14px]"
                     onClick={() => {
                       setFile(null)
                       const dataTransfer = new DataTransfer()
@@ -416,34 +416,34 @@ const Upload = ({ loggedIn }) => {
                     }}
                   >
                     Remove
-                  </p>
+                  </button>
                 </>
               ) : (
                 <>
                   <p className="font-figtree lg:text-base text-dropdown large">
                     Drop your excel sheet here or{' '}
-                    <span
-                      className="text-primary cursor-pointer"
+                    <button
+                      className="text-primary"
                       onClick={() => load.current.click()}
                     >
                       browse
-                    </span>
+                    </button>
                   </p>
                   <p className="font-figtree text-sm leading-6 text-dropdown small">
                     Upload your excel sheet{' '}
-                    <span
-                      className="text-primary cursor-pointer"
+                    <button
+                      className="text-primary"
                       onClick={() => load.current.click()}
                     >
                       here
-                    </span>
+                    </button>
                   </p>
                 </>
               )}
             </div>
           </div>
-          <div
-            className="flex bg-primary cursor-pointer h-[46px] lg:h-[56px] items-center justify-center gap-2 rounded-[8px]"
+          <button
+            className="flex bg-primary h-[46px] lg:h-[56px] items-center justify-center gap-2 rounded-[8px]"
             onClick={() => load.current.click()}
           >
             <svg
@@ -461,10 +461,10 @@ const Upload = ({ loggedIn }) => {
                 strokeLinejoin="round"
               />
             </svg>
-            <button className="font-figtree font-semibold text-[14px] leading-6 text-[white]">
+            <p className="font-figtree font-semibold text-[14px] leading-6 text-[white]">
               Upload
-            </button>
-          </div>
+            </p>
+          </button>
         </div>
         {excelData.length > 0 && (
           <div className="mt-12 lg:mt-[104px] ml-6 lg:ml-[84px] flex flex-col gap-[23px] lg:gap-[46px]">
