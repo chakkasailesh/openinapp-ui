@@ -1,8 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
+  const [formValues, setFormValues] = useState({
+    email: 'test@gmail.com',
+    password: 'test@123',
+  })
+  const [formError, setFormError] = useState(null)
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormValues((prev) => ({
+      ...prev,
+      [name]: value,
+    }))
+  }
   const navigate = useNavigate()
+  const handleSignIn = () => {
+    // eslint-disable-next-line
+    if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formValues.email)) {
+      setFormError('Invalid Email Adress')
+      return
+    }
+    if (formValues.password.length < 8) {
+      setFormError('Password should have atleast 8 characters')
+      return
+    }
+    setFormError(null)
+    navigate('/home')
+  }
   return (
     <div className="w-screen h-screen flex flex-col lg:flex-row bg-bgbody">
       <div className="lg:basis-1/2 bg-primary clip">
@@ -240,7 +265,9 @@ const Login = () => {
                 type="email"
                 name="email"
                 id="email"
-                className="bg-bginput h-11 rounded-[10px] font-lato px-4 focus:bg-bgfocus"
+                onChange={handleChange}
+                value={formValues.email}
+                className="bg-bginput h-11 rounded-[10px] font-lato px-4 focus:bg-bgfocus focus-visible:outline-none"
               />
             </div>
             <div className="flex flex-col">
@@ -251,15 +278,20 @@ const Login = () => {
                 type="password"
                 name="password"
                 id="password"
-                className="bg-bginput h-11 rounded-[10px] font-lato px-4 focus:bg-bgfocus"
+                onChange={handleChange}
+                value={formValues.password}
+                className="bg-bginput h-11 rounded-[10px] font-lato px-4 focus:bg-bgfocus focus-visible:outline-none"
               />
             </div>
+            {formError && (
+              <p className="text-textwarn font-lato">{formError}</p>
+            )}
             <p className="font-lato text-link cursor-pointer">
               Forgot password?
             </p>
             <button
               className="bg-primary h-11 rounded-[10px] font-bold font-montserrat text-[white]"
-              onClick={() => navigate('/home')}
+              onClick={handleSignIn}
             >
               Sign In
             </button>
