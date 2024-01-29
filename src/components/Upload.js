@@ -192,8 +192,8 @@ const Upload = ({ loggedIn }) => {
     <div className="bg-bgbody flex">
       <div
         className={`bg-[white] w-[300px] lg:w-[218px] h-screen fixed lg:static rounded-r-2xl lg:block ${
-          isOpen ? 'block' : 'hidden'
-        } z-[1]`}
+          isOpen ? 'block' : 'hide'
+        } z-[1] sidebar`}
       >
         <div className="flex gap-[11px] lg:gap-4 ml-5 mt-7 mb-11 lg:my-[51px] lg:ml-14 items-center">
           <svg

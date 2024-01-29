@@ -26,6 +26,15 @@
     display: flex;
   }
 
+  @media (max-width: 1023px) {
+    .hide {
+      transform: translateX(-300px);
+    }
+    .sidebar {
+      transition: all 400ms ease-in;
+    }
+  }
+
   @media (min-width: 1024px) {
     .small {
       display: none;
