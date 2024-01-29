@@ -409,7 +409,11 @@ const Upload = ({ loggedIn }) => {
                   </p>
                   <p
                     className="text-textwarn font-figtree text-[14px] cursor-pointer"
-                    onClick={() => setFile(null)}
+                    onClick={() => {
+                      setFile(null)
+                      const dataTransfer = new DataTransfer()
+                      load.current.files = dataTransfer.files
+                    }}
                   >
                     Remove
                   </p>
