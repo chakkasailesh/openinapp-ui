@@ -404,7 +404,7 @@ const Upload = ({ loggedIn }) => {
               </div>
               {file ? (
                 <>
-                  <p className="font-figtree lg:text-base text-dropdown large">
+                  <p className="font-figtree lg:text-base text-dropdown">
                     {file.name}
                   </p>
                   <p
