@@ -471,7 +471,7 @@ const Upload = ({ loggedIn }) => {
             <h2 className="font-nunito lg:font-figtree font-bold lg:font-semibold text-[16px] lg:text-2xl">
               Uploads
             </h2>
-            <div className="bg-bgtable w-[85vw] overflow-scroll">
+            <div className="bg-bgtable w-[75vw] overflow-scroll">
               <table>
                 <thead>
                   <tr className="font-figtree font-semibold text-sm leading-6">
