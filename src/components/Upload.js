@@ -467,6 +467,40 @@ const Upload = ({ loggedIn }) => {
             <h2 className="font-nunito lg:font-figtree font-bold lg:font-semibold text-[16px] lg:text-2xl">
               Uploads
             </h2>
+            <div className="bg-bgtable w-[85vw] overflow-scroll">
+              <table>
+                <thead>
+                  <tr className="font-figtree font-semibold text-sm leading-6">
+                    <th>Sl No.</th>
+                    <th>Links</th>
+                    <th>Prefix</th>
+                    <th>Selected Tags</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {excelData.map((item) => (
+                    <tr
+                      key={item.id}
+                      className="bg-bgrow font-figtree text-sm leading-6 h-[46px] lg:h-[58px]"
+                    >
+                      <td>{item.id}</td>
+                      <td>
+                        <a
+                          href={'https://' + item.links}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-[#5B93FF] underline"
+                        >
+                          {item.links}
+                        </a>
+                      </td>
+                      <td>{item.prefix}</td>
+                      <td>{item['select tags'].split(',')[0]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         )}
       </div>

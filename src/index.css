@@ -9,6 +9,13 @@
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
+  table {
+    border-collapse: separate;
+    border-spacing: 0 16px;
+  }
+  td {
+    padding: 0 32px;
+  }
 }
 
 @layer components {
