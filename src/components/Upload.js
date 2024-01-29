@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
+import { Navigate } from 'react-router-dom'
 import profile from '../assets/profile.png'
 import * as XLSX from 'xlsx'
 
@@ -155,7 +156,7 @@ const icons = [
   },
 ]
 
-const Upload = () => {
+const Upload = ({ loggedIn }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [file, setFile] = useState(null)
   const [excelData, setExcelData] = useState([])
@@ -186,6 +187,7 @@ const Upload = () => {
       setExcelData([])
     }
   }, [file])
+  if (!loggedIn) return <Navigate to="/" />
   return (
     <div className="bg-bgbody flex">
       <div

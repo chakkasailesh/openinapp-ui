@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const Login = () => {
+const Login = ({ onLogin }) => {
   const [formValues, setFormValues] = useState({
     email: 'test@gmail.com',
     password: 'test@123',
@@ -26,6 +26,7 @@ const Login = () => {
       return
     }
     setFormError(null)
+    onLogin(true)
     navigate('/home')
   }
   return (
